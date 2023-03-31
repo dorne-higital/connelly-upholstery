@@ -235,6 +235,7 @@ body {
 @media only screen and (max-width: 600px) {
   .about_section {
     flex-direction: column-reverse;
+    height: auto;
     padding: 0;
   }
 }
@@ -278,7 +279,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
   .about_section .about_section_img {
-    min-height: 40vh;
+    min-height: 30vh;
     width: 100vw;
   }
 }
@@ -298,6 +299,7 @@ body {
 @media only screen and (max-width: 600px) {
   .services_section {
     flex-direction: column;
+    height: auto;
     padding: 0;
   }
 }
@@ -311,7 +313,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
   .services_section .services_section_img {
-    height: 40vh;
+    min-height: 30vh;
     width: 100vw;
   }
 }
