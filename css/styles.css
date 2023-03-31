@@ -41,6 +41,8 @@ body {
   .nav_section {
     margin: 0;
     padding: 1rem 0;
+    position: absolute;
+    top: 0;
     width: 100vw;
   }
 }
