@@ -76,6 +76,10 @@ body {
             font-family: $font-secondary;
             font-size: 1.5rem;
             font-weight: 700;
+
+            img {
+                max-width: 15rem;
+            }
         }
 
         .nav-btn {
@@ -212,7 +216,7 @@ body {
             color: $color-4;
             font-family: $font-secondary;
             font-size: 1.5rem;
-            font-weight: 100;
+            font-weight: 400;
             padding-left: 0.5rem;
 
             @media only screen and (max-width: 600px) {

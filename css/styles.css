@@ -58,6 +58,9 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
 }
+.nav_section nav .nav_logo img {
+  max-width: 15rem;
+}
 .nav_section nav .nav-btn {
   color: #ffffff;
   display: none;
@@ -172,7 +175,7 @@ body {
   color: #EEE5E9;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 400;
   padding-left: 0.5rem;
 }
 @media only screen and (max-width: 600px) {
