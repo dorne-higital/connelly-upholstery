@@ -127,9 +127,6 @@ body {
   .nav_section nav .about_section_text {
     padding: 0 1rem;
   }
-  .nav_section nav a.nav_logo img {
-    max-width: 180px;
-  }
 }
 
 .landing {
