@@ -673,7 +673,7 @@ body {
 .gallery_display .images span {
   cursor: pointer;
   flex: 1 1 auto;
-  height: 200px;
+  height: 230px;
   position: relative;
 }
 .gallery_display .images span img {
