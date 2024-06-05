@@ -3,11 +3,11 @@
         <div class="company_info">
             <h5>Where to find us</h5>
 
-            <p>18a Water Street</p>
+            <p>Address line 1</p>
 
-            <p>Newton-le-Willows</p>
+            <p>Address line 2</p>
 
-            <p>WA12 0EE</p>
+            <p>Postcode</p>
 
             <h5>How to reach us</h5>
 
@@ -24,13 +24,13 @@
                     <a href="/about">About</a>
                 </li>
                 <li>
-                    <a href="/treatments">Treatments</a>
+                    <a href="/galley">Gallery</a>
+                </li>
+                <li>
+                    <a href="/process">Our Process</a>
                 </li>
                 <li>
                     <a href="/contact">Contact</a>
-                </li>
-                <li>
-                    <a href="/booking">Bookings</a>
                 </li>
             </ul>
         </div>
@@ -96,7 +96,7 @@ export default {
     @import "~/assets/css/main.scss";
     
     .footer_section {
-        background-color: $color-2;
+        background-color: $color-3;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

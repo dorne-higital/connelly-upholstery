@@ -13,39 +13,8 @@
             <ul class="desktop_nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                
-                <li>
-                    <a 
-                        href="/" 
-                        @click.prevent="toggleDropdown"
-                    >
-                        Treatments
-                        <icon-arrow-down />
-                    </a>
-
-                    <ul v-if="isDropdownOpen" class="dropdown-desktop">
-                        <li>
-                            <a href="/skin-treats">Skin Treats</a>
-                        </li>
-                        <li>
-                            <a href="/injectables">Injectables</a>
-                        </li>
-                        <li>
-                            <a href="/facial-waxing-tinting">Facial Waxing/tinting</a>
-                        </li>
-                        <li>
-                            <a href="/lash-brow-treatments">Lash & Brow</a>
-                        </li>
-                        <li>
-                            <a href="/weekday-combo">Weekday Combo</a>
-                        </li>
-                        <li>
-                            <a href="/semi-perm-makeup">Semi Perm Make-up</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="/contact">Get in Touch</a></li>
-                <li><a href="/booking">Book Appointment</a></li>
+                <li><a href="/procee">Our process</a></li>
+                <li><a href="/contact">Get in touch</a></li>
             </ul>
             <ul 
                 v-if="isMobileNavOpen"
@@ -83,46 +52,16 @@
                     </li>
 
                     <li>
-                        <a href="/" @click.prevent="toggleDropdown">
-                            Treatments
-
-                            <icon-arrow-right v-if="!isDropdownOpen" />
-                            <icon-arrow-down v-if="isDropdownOpen" />
-                        </a>
-
-                        <ul v-if="isDropdownOpen" class="dropdown-menu">
-                            <li>
-                                <a href="/skin-treats">Skin Treats</a>
-                            </li>
-                            <li>
-                                <a href="/injectables">Injectables</a>
-                            </li>
-                            <li>
-                                <a href="/facial-waxing-tinting">Facial Waxing/tinting</a>
-                            </li>
-                            <li>
-                                <a href="/lash-brow-treatments">Lash & Brow</a>
-                            </li>
-                            <li>
-                                <a href="/weekday-combo">Weekday Combo</a>
-                            </li>
-                            <li>
-                                <a href="/semi-perm-makeup">Semi Perm Make-up</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="/contact">
-                            Get in Touch
+                        <a href="/process">
+                            Our process
 
                             <icon-arrow-right />
                         </a>
                     </li>
 
                     <li>
-                        <a href="/booking">
-                            Book Appointment
+                        <a href="/contact">
+                            Get in touch
                         
                             <icon-arrow-right />
                         </a>
@@ -180,7 +119,7 @@ export default {
     @import "~/assets/css/main.scss";
     
     .nav_section {
-        background-color: $bg-primary;
+        background-color: $color-3;
         padding: 0;
         width: 100vw;
         z-index: 99;
