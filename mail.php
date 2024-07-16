@@ -10,7 +10,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Recipients
-    $mail->setFrom('noreply@connellyupholstery.co.uk', 'NOREPLY');
+    $mail->setFrom('enquiries@connellyupholstery.co.uk', 'NOREPLY');
     // $mail->addAddress('d.horne92@live.co.uk');
     $mail->addAddress('enquiries@connellyupholstery.co.uk');
 
