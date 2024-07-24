@@ -30,7 +30,7 @@
 @import "~/assets/css/main.scss";
 
 .hero-main {
-    height: 60vh;
+    height: 70vh;
     position: relative;
     width: 100%;
 

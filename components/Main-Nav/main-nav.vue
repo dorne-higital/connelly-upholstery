@@ -135,6 +135,7 @@ export default {
 
         @media only screen and (max-width: 600px) {
             margin: 0;
+            padding: 1rem 0 .5rem;
             width: 100vw;
         }
 
@@ -240,7 +241,7 @@ export default {
                 }
 
                 .mobile_nav {
-                    background-color: white;
+                    background-color: $color-3;
                     box-shadow: 0px 2px 20px #929292;
                     flex-direction: column;
                     height: 100dvh;
@@ -252,9 +253,10 @@ export default {
                     z-index: 99;
 
                     .mobile_nav_header {
+                        align-items: center;
                         display: flex;
                         justify-content: space-between;
-                        align-items: center;
+                        padding: 1rem 0 .5rem;
 
                         .close {
                             cursor: pointer;
