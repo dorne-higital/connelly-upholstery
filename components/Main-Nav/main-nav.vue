@@ -13,7 +13,8 @@
             <ul class="desktop_nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/procee">Our process</a></li>
+                <li><a href="/process">Our process</a></li>
+                <li><a href="/work">Recent work</a></li>
                 <li><a href="/contact">Get in touch</a></li>
             </ul>
             <ul 
@@ -54,6 +55,14 @@
                     <li>
                         <a href="/process">
                             Our process
+
+                            <icon-arrow-right />
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/work">
+                            Recent work
 
                             <icon-arrow-right />
                         </a>
