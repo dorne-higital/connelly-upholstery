@@ -9,8 +9,6 @@
 
             <p>Postcode</p>
 
-            <h5>How to reach us</h5>
-
             <p>Tel: <span>0123456789</span></p>
 
             <p>Email: <span>email@email.com</span></p>
@@ -24,13 +22,13 @@
                     <a href="/about">About</a>
                 </li>
                 <li>
-                    <a href="/galley">Gallery</a>
+                    <a href="/process">Our process</a>
                 </li>
                 <li>
-                    <a href="/process">Our Process</a>
+                    <a href="/galley">Recent work</a>
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    <a href="/contact">Get in touch</a>
                 </li>
             </ul>
         </div>

@@ -3,7 +3,7 @@
         <nav>
             <a href="/" class="nav_logo">
                 <img 
-                    src="~/assets/images/logo.jpg"
+                    src="~/assets/images/white-logo.png"
                     alt="Logo for Connelly Upholstery"
                 >
             </a>
@@ -128,8 +128,9 @@ export default {
     @import "~/assets/css/main.scss";
     
     .nav_section {
-        background-color: $color-3;
+        background: linear-gradient(180deg, #161616, transparent);
         padding: 0;
+        position: absolute;
         width: 100vw;
         z-index: 99;
 
@@ -197,6 +198,7 @@ export default {
 
                     a {
                         align-items: center;
+                        color: $secondary-color;
                         display: flex;
                         flex-grow: 1;
                         justify-content: center;
@@ -272,6 +274,7 @@ export default {
                             padding: 0 1rem;
 
                             a {
+                                color: $primary-color;
                                 padding: 1rem 0;
                             }
                         }
@@ -316,6 +319,10 @@ export default {
                     cursor: pointer;
                     display: block;
                     padding-right: 1.5rem;
+
+                    svg {
+                        fill: $secondary-color;
+                    }
                 }
 
                 a.nav_logo,

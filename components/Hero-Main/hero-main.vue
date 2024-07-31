@@ -30,7 +30,7 @@
 @import "~/assets/css/main.scss";
 
 .hero-main {
-    height: 70vh;
+    height: 100dvh;
     position: relative;
     width: 100%;
 
@@ -44,6 +44,7 @@
         width: 100%;
 
         .img-container {
+            // background-color: $color-3;
             height: 100%;
             overflow: hidden;
             position: relative;
