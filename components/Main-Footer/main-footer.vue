@@ -34,42 +34,42 @@
         </div>
 
         <div class="contact_info">
-            <h5>Opening hours</h5>
+            <h5>Office hours</h5>
 
             <ul class="hours">
                 <li>
                     <p>Monday</p>
-                    <p>Closed</p>
+                    <p>09:30 - 14:30</p>
                 </li>
                 <li>
                     <p>Tuesday</p>
-                    <p>Closed</p>
+                    <p>09:30 - 14:30</p>
                 </li>
                 <li>
                     <p>Wednesday</p>
-                    <p>10:00 - 18:00</p>
+                    <p>11:30 - 16:30</p>
                 </li>
                 <li>
                     <p>Thursday</p>
-                    <p>10:00 - 18:00</p>
+                    <p>09:30 - 14:30</p>
                 </li>
                 <li>
                     <p>Friday</p>
-                    <p>10:00 - 18:00</p>
+                    <p>11:30 - 15:00</p>
                 </li>
                 <li>
                     <p>Saturday</p>
-                    <p>10:00 - 18:00</p>
+                    <p>By appointment</p>
                 </li>
                 <li>
                     <p>Sunday</p>
-                    <p>10:00 - 18:00</p>
+                    <p>By appointment</p>
                 </li>
             </ul>
         </div>
 
         <div class="legal_info">
-            <p>Copyright Connelly Upholstery 2024</p>
+            <p>Copyright © Connelly Upholstery 2024</p>
         </div>
     </section>
 </template>
