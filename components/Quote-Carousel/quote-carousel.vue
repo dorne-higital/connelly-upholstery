@@ -26,11 +26,11 @@
                         class="quote-content"
                         :key="currentQuote.text"
                     >
-                        <h3 class="quote">
+                        <h4 class="quote">
                             <sup>"</sup>
-                                <i>{{ isFullQuoteVisible || currentQuote.text.length <= maxQuoteLength ? currentQuote.text : truncatedQuote }}</i>
+                                {{ isFullQuoteVisible || currentQuote.text.length <= maxQuoteLength ? currentQuote.text : truncatedQuote }}
                             <sup>"</sup>
-                        </h3>
+                        </h4>
 
                         <span 
                             v-if="!isFullQuoteVisible && currentQuote.text.length > maxQuoteLength"
@@ -211,6 +211,8 @@
             }
 
             .quote {
+                font-family: $secondary-font;
+                font-weight: 100;
                 margin-bottom: .3rem;
             }
 
