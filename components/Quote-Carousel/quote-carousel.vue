@@ -41,7 +41,7 @@
                         </span>
 
                         <p class="name">
-                            {{ currentQuote.name }}
+                            - <i>{{ currentQuote.name }}</i>
                         </p>
                     </div>
                 </transition>
