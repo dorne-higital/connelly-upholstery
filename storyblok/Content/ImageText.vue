@@ -96,7 +96,7 @@
             flex-direction: row-reverse;
 
             .content-container {
-                text-align: right;
+                align-items: flex-end;
             }
         }
 
