@@ -1,11 +1,9 @@
 <template>
     <section
         v-editable="blok"
-        :style="{ 
-            backgroundColor: blok.bgColour.value 
-        }"
         :class="[
-            blok.imageAlign
+            blok.imageAlign,
+            dynamicClass
         ]"
         class="image-text"
     >
@@ -59,6 +57,18 @@
                 type: Object,
             }
         },
+        data() {
+            return {
+                // Define color mappings in data
+                colorClassMapping: {
+                    '#273664': 'color-1',
+                    '#885219': 'color-2',
+                    '#efefef': 'color-3',
+                    '#3b4944': 'color-4',
+                    '#FEFCFB': 'color-5',
+                }
+            };
+        },
         computed: {
             // Resolves the rich text into HTML
             resolvedRichText() {
@@ -67,7 +77,12 @@
                     return resolver.render(this.blok.description); // Resolve the rich text field
                 }
                 return '';
-            }
+            },
+
+            dynamicClass() {
+                const color = this.blok.bgColour.value;
+                return this.colorClassMapping[color] || '';
+            },
         }
     }
 </script>
@@ -81,6 +96,26 @@
         gap: 2rem;
         padding: 5rem 2rem;
         width: 100%;
+
+        &.color-1 {
+            background-color: $color-1;
+            color: $secondary-color;
+
+            a {
+                color: $secondary-color;
+                cursor: pointer;
+            }
+        }
+
+        &.color-2 {
+            background-color: $color-2;
+            color: $secondary-color;
+
+            a {
+                color: $secondary-color;
+                cursor: pointer;
+            }
+        }
 
         @media (max-width: 600px) {
             flex-direction: column-reverse;
