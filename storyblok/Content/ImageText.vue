@@ -92,6 +92,10 @@
             }
         }
 
+        &.text-image {
+            flex-direction: row-reverse;
+        }
+
         .content-container {
             display: flex;
             flex: 1;
