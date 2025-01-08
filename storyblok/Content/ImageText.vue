@@ -61,9 +61,9 @@
             return {
                 // Define color mappings in data
                 colorClassMapping: {
-                    '#273664': 'color-1',
-                    '#885219': 'color-2',
-                    '#3b4944': 'color-3',
+                    '#3b4944': 'color-1',
+                    '#273664': 'color-2',
+                    '#885219': 'color-3',
                     '#efefef': 'color-4',
                     '#FEFCFB': 'color-5',
                 }
@@ -98,7 +98,7 @@
         width: 100%;
 
         &.color-1 {
-            background-color: $color-1;
+            background-color: $color-4;
             color: $secondary-color;
 
             a {
@@ -108,7 +108,7 @@
         }
 
         &.color-2 {
-            background-color: $color-2;
+            background-color: $color-1;
             color: $secondary-color;
 
             a {
@@ -118,7 +118,7 @@
         }
 
         &.color-3 {
-            background-color: $color-3;
+            background-color: $color-2;
 
             a {
                 cursor: pointer;
