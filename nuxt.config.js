@@ -33,6 +33,7 @@ export default defineNuxtConfig({
   },
 
   css: ['@/assets/css/main.css'],
+
   modules: [
     [
       '@storyblok/nuxt',
@@ -44,8 +45,11 @@ export default defineNuxtConfig({
       },
     ],
   ],
+
   components: {
     global: true,
     dirs: ['~/components']
   },
+
+  compatibilityDate: '2025-01-08',
 })

@@ -27,8 +27,8 @@
 
             <div class="img-container">
 				<img 
-					:src="blok.image.filename" 
-					:alt="blok.image.alt"
+					:src="blok.backgroundImage.filename" 
+					:alt="blok.backgroundImage.alt"
 				>
             </div>
         </div>
