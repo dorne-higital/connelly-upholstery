@@ -94,6 +94,10 @@
 
         &.text-image {
             flex-direction: row-reverse;
+
+            .content-container {
+                text-align: right;
+            }
         }
 
         .content-container {
