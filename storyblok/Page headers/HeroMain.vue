@@ -11,9 +11,20 @@
 				>
 					{{ blok.label }}
 				</p>
-                <h1>Your favourite local Upholstery expert!</h1>
-                <nuxt-link to="/contact" class="button primary">Get in touch</nuxt-link>
+
+				<h1 v-if="blok?.heading?.length">{{ blok.heading }}</h1>
+
+				<h3 v-if="blok?.subheading?.length">{{ blok.subheading }}</h3>
+
+				<nuxt-link 
+					v-if="blok?.linkText?.length"
+					:to="blok.linkUrl.cached_url"
+					class="button"
+				>
+					{{ blok.linkText }}
+				</nuxt-link>
             </div>
+			
             <div class="img-container">
                 <img src="~/assets/images/green-lux-sofa.jpeg" alt="Hero Image">
             </div>
