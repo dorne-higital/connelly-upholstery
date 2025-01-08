@@ -24,9 +24,12 @@
 					{{ blok.linkText }}
 				</nuxt-link>
             </div>
-			
+
             <div class="img-container">
-                <img src="~/assets/images/green-lux-sofa.jpeg" alt="Hero Image">
+				<img 
+					:src="blok.image.filename" 
+					:alt="blok.image.alt"
+				>
             </div>
         </div>
     </section>
