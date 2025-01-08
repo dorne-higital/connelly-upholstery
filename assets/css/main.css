@@ -14,6 +14,10 @@ header, nav, section {
   vertical-align: baseline;
 }
 
+body {
+  background-color: #FEFCFB;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, footer,
 header, nav, section {
