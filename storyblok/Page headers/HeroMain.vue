@@ -5,7 +5,12 @@
 	>
         <div class="hero-banner">
             <div class="hero-content">
-                <p class="description-header">Connelly Upholstery</p>
+                <p 
+					v-if="blok?.label?.length"
+					class="description-header"
+				>
+					{{ blok.label }}
+				</p>
                 <h1>Your favourite local Upholstery expert!</h1>
                 <nuxt-link to="/contact" class="button primary">Get in touch</nuxt-link>
             </div>
