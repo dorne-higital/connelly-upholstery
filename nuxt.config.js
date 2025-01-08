@@ -1,16 +1,15 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: { 
-        enabled: true 
-    },
-    css: [
-        '@/assets/css/main.css'
+  css: ['@/assets/css/roboto.css'],
+  modules: [
+    [
+      '@storyblok/nuxt',
+      {
+        accessToken: 'XFpR0AEuvI2nLhpnj3F3iwtt',
+        apiOptions: {
+          region: '' // Set 'US" if your space is created in US region (EU default)
+        }
+      },
     ],
-    components: {
-        global: true,
-        dirs: [
-            '~/components'
-        ]
-    },
+    '@nuxtjs/tailwindcss',
+  ]
 })
-  

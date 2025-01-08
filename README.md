@@ -1,75 +1,12 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Storyblok quick starter project
 
-## Setup
+Welcome to this sample project for Nuxt!
+This project serves as a quick starter for integrating Storyblok, a headless CMS, into your web development projects.
 
-Make sure to install the dependencies:
+For starting, you can access to the `connelly upholstery` folder.
+In the folder you have some files like:
 
-```bash
-# npm
-npm install
+- `nuxt.config.js`: the configuration with Storyblok API;
+- `pages/index.vue`: the initialization of the Storyblok Bridge.
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
