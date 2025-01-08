@@ -90,6 +90,10 @@
             &.top {
                 flex-direction: column;
             }
+
+            &.text-image {
+                flex-direction: column;
+            }
         }
 
         &.text-image {
