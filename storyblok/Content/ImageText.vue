@@ -63,8 +63,8 @@
                 colorClassMapping: {
                     '#273664': 'color-1',
                     '#885219': 'color-2',
-                    '#efefef': 'color-3',
-                    '#3b4944': 'color-4',
+                    '#3b4944': 'color-3',
+                    '#efefef': 'color-4',
                     '#FEFCFB': 'color-5',
                 }
             };
@@ -126,7 +126,7 @@
         }
 
         &.color-4 {
-            background-color: $color-4;
+            background-color: $color-3;
             color: $secondary-color;
 
             a {
@@ -136,7 +136,7 @@
         }
 
         &.color-5 {
-            background-color: $color-5;
+            background-color: $secondary-color;
 
             a {
                 cursor: pointer;
