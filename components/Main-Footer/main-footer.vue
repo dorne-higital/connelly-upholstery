@@ -91,7 +91,7 @@
         </div>
 
         <div class="legal_info">
-            <p>Copyright &copy; Connelly Upholstery 2024</p>
+            <p>Copyright &copy; Connelly Upholstery {{ currentYear }}</p>
         </div>
     </section>
 </template>
@@ -118,6 +118,11 @@ export default {
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.checkScreenSize);
+    },
+    computed: {
+        currentYear() {
+            return new Date().getFullYear();
+        }
     },
     methods: {
         toggleSection(section) {
