@@ -119,18 +119,18 @@
 
         &.color-3 {
             background-color: $color-2;
+            color: $secondary-color;
 
             a {
+                color: $secondary-color;
                 cursor: pointer;
             }
         }
 
         &.color-4 {
             background-color: $color-3;
-            color: $secondary-color;
 
             a {
-                color: $secondary-color;
                 cursor: pointer;
             }
         }
