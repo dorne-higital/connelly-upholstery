@@ -117,6 +117,32 @@
             }
         }
 
+        &.color-3 {
+            background-color: $color-3;
+
+            a {
+                cursor: pointer;
+            }
+        }
+
+        &.color-4 {
+            background-color: $color-4;
+            color: $secondary-color;
+
+            a {
+                color: $secondary-color;
+                cursor: pointer;
+            }
+        }
+
+        &.color-5 {
+            background-color: $color-5;
+
+            a {
+                cursor: pointer;
+            }
+        }
+
         @media (max-width: 600px) {
             flex-direction: column-reverse;
             padding: 2rem 1rem;
