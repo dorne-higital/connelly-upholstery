@@ -97,15 +97,18 @@
 
             .content-container {
                 align-items: flex-end;
+                text-align: right;
             }
         }
 
         .content-container {
+            align-items: flex-start;
             display: flex;
             flex: 1;
             flex-direction: column;
             justify-content: center;
             padding: 1rem 2rem;
+            text-align: left;
             width: 50%;
 
             @media (max-width: 600px) {
