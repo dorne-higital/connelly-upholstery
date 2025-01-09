@@ -8,7 +8,7 @@
         class="gallery"
     >
         <div 
-            v-if="blok?.label?.length && blok?.heading?.length && blok?.subheading?.length"
+            v-if="blok?.label?.length || blok?.heading?.length || blok?.subheading?.length"
             :style="{ 
             }"
 			class="content-container"
