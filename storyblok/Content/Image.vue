@@ -34,13 +34,14 @@
         display: flex;
         flex-direction: row;
         gap: 2rem;
+        max-width: 33%;
         padding: 1rem;
-		width: 33%;
 
         @media (max-width: 600px) {
-            flex-direction: column-reverse;
-            padding: 1rem 0;
-            max-width: 100%;
+            max-width: 50%;
+            min-height: 100%;
+            object-fit: cover;
+            padding: .5rem;
         }
 
 		img {
