@@ -18,6 +18,7 @@
     "sass-embedded": "^1.83.1"
   },
   "dependencies": {
-    "masonry-layout": "^4.2.2"
+    "masonry-layout": "^4.2.2",
+    "vue3-carousel": "^0.12.0"
   }
 }
