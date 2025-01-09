@@ -35,7 +35,7 @@
         flex-direction: row;
         gap: 2rem;
         padding: 1rem;
-		max-width: 50%;
+		max-width: 33%;
 
         @media (max-width: 600px) {
             flex-direction: column-reverse;
