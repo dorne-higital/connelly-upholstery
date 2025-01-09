@@ -35,12 +35,12 @@
         flex-direction: row;
         gap: 2rem;
         padding: 1rem;
-		max-width: 33%;
+		// max-width: 33%;
 
         @media (max-width: 600px) {
             flex-direction: column-reverse;
             padding: 1rem 0;
-            max-width: 100%;
+            // max-width: 100%;
         }
 
 		img {

@@ -143,12 +143,17 @@
         }
 
         .block-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 1rem;
             padding: 1rem;
             max-width: $sw;
 
+            grid-auto-flow: dense;
+            align-items: start;
+
             @media (max-width: 600px) {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 padding: 0;
                 width: 100%;
             }
