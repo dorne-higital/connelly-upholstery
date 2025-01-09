@@ -36,6 +36,16 @@
                 :blok="blok"
             />
         </div>
+
+
+
+        <nuxt-link 
+            v-if="blok?.linkText?.length"
+            :to="blok.linkUrl.cached_url"
+            class="button"
+        >
+            {{ blok.linkText }}
+        </nuxt-link>
     </section>
 </template>
 
@@ -82,6 +92,7 @@
         display: flex;
         flex-direction: column;
         padding: 2rem 5rem;
+        text-align: center;
         width: 100%;
 
         @media (max-width: 600px) {
@@ -143,17 +154,12 @@
         }
 
         .block-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-            gap: 1rem;
+            display: flex;
+            flex-wrap: wrap;
             padding: 1rem;
             max-width: $sw;
 
-            grid-auto-flow: dense;
-            align-items: start;
-
             @media (max-width: 600px) {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 padding: 0;
                 width: 100%;
             }

@@ -16,5 +16,8 @@
     "@storyblok/nuxt": "^6.0.4",
     "nuxt": "^3.10.2",
     "sass-embedded": "^1.83.1"
+  },
+  "dependencies": {
+    "masonry-layout": "^4.2.2"
   }
 }
