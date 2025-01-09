@@ -89,29 +89,57 @@
             width: 100%;
         }
 
-        //////////////////
-        // Theme styles //
-        //////////////////
-        
-        &.theme-dark {
-            background-color: $bg-secondary;
+        &.color-1 {
+            background-color: $color-4;
             color: $secondary-color;
+
+            a {
+                color: $secondary-color;
+                cursor: pointer;
+            }
         }
 
-        &.theme-color-1 {
+        &.color-2 {
             background-color: $color-1;
-            color: $primary-color;
+            color: $secondary-color;
+
+            a {
+                color: $secondary-color;
+                cursor: pointer;
+            }
         }
 
-        &.theme-color-2 {
+        &.color-3 {
             background-color: $color-2;
             color: $secondary-color;
+
+            a {
+                color: $secondary-color;
+                cursor: pointer;
+            }
+        }
+
+        &.color-4 {
+            background-color: $color-3;
+
+            a {
+                cursor: pointer;
+            }
+        }
+
+        &.color-5 {
+            background-color: $secondary-color;
+
+            a {
+                cursor: pointer;
+            }
         }
 
         .content-container {
             flex: 1;
-            padding: 1rem 2rem;
             max-width: $sw;
+            padding: 1rem 2rem;
+            text-align: center;
         }
 
         .block-container {
