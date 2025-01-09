@@ -30,8 +30,6 @@
                 {{ blok.subheading }}
             </h4>
 
-            <div v-html="resolvedRichText"></div>
-
             <nuxt-link 
                 v-if="blok?.linkText?.length"
                 :to="blok.linkUrl.cached_url"
@@ -44,8 +42,6 @@
 </template>
 
 <script>
-    import { RichTextResolver } from '@storyblok/vue';
-
     export default {
         name: 'imageCards',
         props: {
@@ -59,26 +55,9 @@
         },
         data() {
             return {
-                // Define color mappings in data
-                colorClassMapping: {
-                    '#3b4944': 'color-1',
-                    '#273664': 'color-2',
-                    '#885219': 'color-3',
-                    '#efefef': 'color-4',
-                    '#FEFCFB': 'color-5',
-                }
             };
         },
         computed: {
-            // Resolves the rich text into HTML
-            resolvedRichText() {
-                if (this.blok?.description) {
-                    const resolver = new RichTextResolver();
-                    return resolver.render(this.blok.description); // Resolve the rich text field
-                }
-                return '';
-            },
-
             dynamicClass() {
                 const color = this.blok.bgColour.value;
                 return this.colorClassMapping[color] || '';
