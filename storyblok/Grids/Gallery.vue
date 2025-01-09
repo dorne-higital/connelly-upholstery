@@ -161,6 +161,7 @@
         .block-container {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             padding: 1rem;
             max-width: $sw;
 
