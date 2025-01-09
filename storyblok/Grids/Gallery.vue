@@ -37,8 +37,6 @@
             />
         </div>
 
-
-
         <nuxt-link 
             v-if="blok?.linkText?.length"
             :to="blok.linkUrl.cached_url"
@@ -162,6 +160,22 @@
             @media (max-width: 600px) {
                 padding: 0;
                 width: 100%;
+            }
+        }
+
+        .button {
+            background-color: $primary-color;
+            border: 2px solid transparent;
+            color: $secondary-color;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: .75rem 2.25rem;
+            transition: .2s;
+
+            &:hover {
+                border: 2px solid $secondary-color;
+                transition: .3s;
             }
         }
     }
