@@ -102,9 +102,10 @@
             background-color: $color-4;
             color: $secondary-color;
 
-            a {
-                color: $secondary-color;
-                cursor: pointer;
+            .button {
+                &:hover {
+                    border: 2px solid $color-4;
+                }
             }
         }
 
@@ -112,9 +113,10 @@
             background-color: $color-1;
             color: $secondary-color;
 
-            a {
-                color: $secondary-color;
-                cursor: pointer;
+            .button {
+                &:hover {
+                    border: 2px solid $color-1;
+                }
             }
         }
 
@@ -122,25 +124,30 @@
             background-color: $color-2;
             color: $secondary-color;
 
-            a {
-                color: $secondary-color;
-                cursor: pointer;
+            .button {
+                &:hover {
+                    border: 2px solid $color-2;
+                }
             }
         }
 
         &.color-4 {
             background-color: $color-3;
 
-            a {
-                cursor: pointer;
+            .button {
+                &:hover {
+                    border: 2px solid $color-3;
+                }
             }
         }
 
         &.color-5 {
             background-color: $secondary-color;
 
-            a {
-                cursor: pointer;
+            .button {
+                &:hover {
+                    border: 2px solid $secondary-color;
+                }
             }
         }
 
