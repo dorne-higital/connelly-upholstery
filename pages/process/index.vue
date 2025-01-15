@@ -1,18 +1,31 @@
 <template>
     <div>
-		<br /><br /><br /><br /><br /><br />
-		<h2>Our process</h2>
+        <StoryblokComponent v-if="story" :blok="story.content" />
     </div>
 </template>
-  
-<script>
-    // import buildingImage from '@/assets/images/building.jpg';
 
-    export default {
-        data() {
-            return {
-            }
+<script setup>
+    const story = await useAsyncStoryblok('process', { version: 'draft' },
+        { 
+        customParent: 'https://app.storyblok.com' 
         }
-    }
+    )
+
+    useHead({
+        title: 'Connelly Upholstery | Process',
+        meta: [
+            {
+                name: 'description',
+                content: 'Process page'
+            },
+            {
+                property: 'og:title',
+                content: 'Connelly Upholstery | Process'
+            },
+            {
+                property: 'og:description',
+                content: 'Process page'
+            },
+        ]
+    })
 </script>
-  
