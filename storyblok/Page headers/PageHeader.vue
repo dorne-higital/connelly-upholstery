@@ -8,7 +8,8 @@
         <div 
             class="header-container"
             :class="[
-                dynamicClass
+                dynamicClass,
+                blok.shape.value
             ]"
         >
             <p 
@@ -75,12 +76,23 @@
         .header-container {
             align-items: center;
             background: $bg-tertiary;
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
             color: $primary-color;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 7rem 4rem 4rem;
+
+            &.straight {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            &.angular {
+                clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+            }
+
+            &.slash {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+            }
 
             @media (max-width: 600px) {
                 flex-wrap: wrap;
