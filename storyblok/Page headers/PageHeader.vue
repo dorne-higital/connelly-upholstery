@@ -1,7 +1,10 @@
 <template>
     <section 
         v-editable="blok"
-        class="page-header"
+        :class="[
+            componentName,
+            dynamicClass
+        ]"
     >
         <div 
             class="header-container"
@@ -38,10 +41,31 @@
             
         },
         props: {
+            componentName: {
+                type: String,
+                default: 'page-header'
+            },
             blok: {
                 type: Object
             }
         },
+        data() {
+            return {
+                colorClassMapping: {
+                    '#3b4944': 'color-1',
+                    '#273664': 'color-2',
+                    '#885219': 'color-3',
+                    '#efefef': 'color-4',
+                    '#FEFCFB': 'color-5',
+                }
+            };
+        },
+        computed: {
+            dynamicClass() {
+                const color = this.blok.bgColour.value;
+                return this.colorClassMapping[color] || '';
+            },
+        }
     }
 </script>
 
@@ -66,33 +90,51 @@
                 text-align: center;
             }
 
-            //////////////////
-            // Theme styles //
-            //////////////////
-            
-            &.dark {
-                background: $bg-secondary;
-                color: $secondary-color;
-            }
-            
+
             &.color-1 {
-                background: $color-1;
-                color: $primary-color;
+                background-color: $color-4;
+                color: $secondary-color;
+
+                a {
+                    color: $secondary-color;
+                    cursor: pointer;
+                }
             }
-            
+
             &.color-2 {
-                background: $color-2;
-                color: $primary-color;
+                background-color: $color-1;
+                color: $secondary-color;
+
+                a {
+                    color: $secondary-color;
+                    cursor: pointer;
+                }
             }
-            
-            &.gradient-1 {
-                background: linear-gradient($bg-primary, $color-1);
-                color: $primary-color;
+
+            &.color-3 {
+                background-color: $color-2;
+                color: $secondary-color;
+
+                a {
+                    color: $secondary-color;
+                    cursor: pointer;
+                }
             }
-            
-            &.gradient-2 {
-                background: linear-gradient($bg-primary, $color-2);
-                color: $primary-color;
+
+            &.color-4 {
+                background-color: $color-3;
+
+                a {
+                    cursor: pointer;
+                }
+            }
+
+            &.color-5 {
+                background-color: $secondary-color;
+
+                a {
+                    cursor: pointer;
+                }
             }
         }  
     }
