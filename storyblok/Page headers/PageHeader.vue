@@ -9,7 +9,7 @@
             class="header-container"
             :class="[
                 dynamicClass,
-                blok.shape.value
+                blok.shape
             ]"
         >
             <p 
