@@ -3,14 +3,13 @@
         v-editable="blok"
         :class="[
             componentName,
-            dynamicClass
         ]"
     >
         <div 
             class="header-container"
-            :style="{ 
-                backgroundColor: blok.bgColour.value 
-            }"
+            :class="[
+                dynamicClass
+            ]"
         >
             <p 
                 v-if="blok?.label?.length"
@@ -89,7 +88,6 @@
                 padding: 3rem 1rem 5rem;
                 text-align: center;
             }
-
 
             &.color-1 {
                 background-color: $color-4;
