@@ -91,7 +91,7 @@
             }
 
             &.slash {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
             }
 
             @media (max-width: 600px) {
