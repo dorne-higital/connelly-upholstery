@@ -80,12 +80,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 4rem;
+            padding: 7rem 4rem 4rem;
 
             @media (max-width: 600px) {
                 flex-wrap: wrap;
                 gap: 1rem;
-                padding: 3rem 1rem 5rem;
+                padding: 6rem 1rem 5rem;
                 text-align: center;
             }
 
