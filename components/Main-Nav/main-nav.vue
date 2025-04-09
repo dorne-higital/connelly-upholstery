@@ -87,15 +87,12 @@
                 </div>
 
                 <div class="mobile_nav_footer">
-                    <span>
+                    <nuxt-link to="https://www.instagram.com/Mconnelly_upholstery/">
                         <icon-instagram />
-                    </span>
-                    <span>
+                    </nuxt-link>
+                    <nuxt-link to="https://www.facebook.com/profile.php?id=100057350593749">
                         <icon-facebook />
-                    </span>
-                    <span>
-                        <icon-tiktok />
-                    </span>
+                    </nuxt-link>
                 </div>
             </ul>
         </nav>
@@ -107,6 +104,8 @@
     import iconArrowRight from '~/components/Icons/icon-arrow-right.vue';
     import iconMenu from '~/components/Icons/icon-menu.vue';
     import iconClose from '~/components/Icons/icon-close.vue';
+    import iconInstagram from '~/components/Icons/icon-instagram.vue';
+    import iconFacebook from '~/components/Icons/icon-facebook.vue';
 
 export default {
     name: 'mainNav',
@@ -115,6 +114,8 @@ export default {
         iconArrowRight,
         iconMenu,
         iconClose,
+        iconInstagram,
+        iconFacebook,
     },
     data() {
         return {
@@ -280,7 +281,7 @@ export default {
                         padding: 1rem 0;
 
                         li {
-                            padding: 0 1rem;
+                            padding: 0 2rem;
 
                             a {
                                 color: $primary-color;
@@ -313,7 +314,7 @@ export default {
                     }
 
                     .mobile_nav_footer {
-                        background-color: $color-1;
+                        background-color: $color-4;
                         bottom: 0;
                         display: flex;
                         flex-direction: row;

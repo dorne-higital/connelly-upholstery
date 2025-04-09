@@ -18,7 +18,9 @@
     "sass-embedded": "^1.83.1"
   },
   "dependencies": {
+    "formidable": "^3.5.2",
     "masonry-layout": "^4.2.2",
+    "nodemailer": "^6.10.0",
     "vue3-carousel": "^0.12.0"
   }
 }
