@@ -30,41 +30,44 @@
                 </div>
             </div>
 
-            <div class="row form-row">
+            <div class="row">
 				<h3 v-if="blok?.formHeading?.length">{{ blok.formHeading }}</h3>
+				<form @submit.prevent="handleSubmit">
+					<div class="form-row">
+						<div class="form-column left">
+							<p>
+								<label>Your Name: <input type="text" name="name" v-model="formData.name" required /></label>
+							</p>
+							<p>
+								<label>Your Email: <input type="email" name="email" v-model="formData.email" required /></label>
+							</p>
+							<p>
+								<label>Contact Number: <input type="number" name="telephone" v-model="formData.telephone" required /></label>
+							</p>
+							<p>
+								<label>Location: <input type="text" name="location" v-model="formData.location" required /></label>
+							</p>
+						</div>
+						<div class="form-column right">
+							<p class="message-field">
+								<label>Message: <textarea name="message" v-model="formData.message" required></textarea></label>
+							</p>
+							<p class="submit-button">
+								<button type="submit" :disabled="isSubmitting">
+									<span v-if="isSubmitting">Sending...</span>
+									<span v-else>Send</span>
+								</button>
+							</p>
 
-                <div class="form-column left">
-                    <p>
-                        <label>Your Name: <input type="text" name="name" v-model="formData.name" required /></label>
-                    </p>
-                    <p>
-                        <label>Your Email: <input type="email" name="email" v-model="formData.email" required /></label>
-                    </p>
-                    <p>
-                        <label>Contact Number: <input type="number" name="telephone" v-model="formData.telephone" required /></label>
-                    </p>
-                    <p>
-                        <label>Location: <input type="text" name="location" v-model="formData.location" required /></label>
-                    </p>
-                </div>
-                <div class="form-column right">
-                    <p class="message-field">
-                        <label>Message: <textarea name="message" v-model="formData.message" required></textarea></label>
-                    </p>
-                    <p class="submit-button">
-                        <button type="submit" :disabled="isSubmitting">
-                            <span v-if="isSubmitting">Sending...</span>
-                            <span v-else>Send</span>
-                        </button>
-                    </p>
-
-                    <div v-if="submissionResult === 'success'" class="success-message">
-                        {{ submissionMessage }}
-                    </div>
-                    <div v-if="submissionResult === 'error'" class="error-message">
-                        {{ submissionMessage }}
-                    </div>
-                </div>
+							<div v-if="submissionResult === 'success'" class="success-message">
+								{{ submissionMessage }}
+							</div>
+							<div v-if="submissionResult === 'error'" class="error-message">
+								{{ submissionMessage }}
+							</div>
+						</div>
+					</div>
+				</form>
             </div>
         </div>
     </section>
@@ -247,67 +250,73 @@
                 }
             }
 
-            .row.form-row {
-                display: flex;
-                flex-direction: row;
-                gap: 2rem;
-                width: 100%;
-                margin-top: 2rem;
+            .row {
+				h3 {
+					padding: 0 1rem;
+				}
+				.form-row {
+					display: flex;
+					flex-direction: row;
+					gap: 2rem;
+					padding: 1rem;
+					width: 100%;
+					margin-top: 2rem;
 
-                .form-column {
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
+					.form-column {
+						flex: 1;
+						display: flex;
+						flex-direction: column;
 
-                    p {
-                        margin-bottom: 1rem;
+						p {
+							margin-bottom: 1rem;
 
-                        label {
-                            display: block;
-                            margin-bottom: 0.5rem;
-                            font-weight: bold;
-                        }
+							label {
+								display: block;
+								margin-bottom: 0.5rem;
+								font-weight: bold;
+							}
 
-                        input[type="text"],
-                        input[type="email"],
-                        input[type="number"],
-                        textarea,
-                        select {
-                            width: 100%;
-                            padding: 0.75rem;
-                            border: 1px solid #ccc;
-                            border-radius: 4px;
-                            box-sizing: border-box;
-                        }
+							input[type="text"],
+							input[type="email"],
+							input[type="number"],
+							textarea,
+							select {
+								width: 100%;
+								padding: 0.75rem;
+								border: 1px solid #ccc;
+								border-radius: 4px;
+								box-sizing: border-box;
+							}
 
-                        textarea {
-                            min-height: 100px;
-                        }
-                    }
+							textarea {
+								min-height: 100px;
+							}
+						}
 
-                    &.right {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
+						&.right {
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
 
-                        .submit-button {
-                            margin-top: auto;
-                        }
-                    }
-                }
+							.submit-button {
+								margin-top: auto;
+							}
+						}
+					}
 
-                @media (max-width: 768px) {
-                    flex-direction: column;
+					@media (max-width: 768px) {
+						flex-direction: column;
 
-                    .form-column {
-                        width: 100%;
+						.form-column {
+							width: 100%;
 
-                        &.right {
-                            margin-top: 1.5rem;
-                        }
-                    }
-                }
-            }
+							&.right {
+								margin-top: 1.5rem;
+							}
+						}
+					}
+				}
+			}
 
             .row.full-width {
                 margin-top: 2rem;

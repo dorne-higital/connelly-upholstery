@@ -2,7 +2,7 @@
     <div>
         <StoryblokComponent v-if="story" :blok="story.content" />
 
-        <form @submit.prevent="handleSubmit">
+        <!-- <form @submit.prevent="handleSubmit">
             <p>
                 <label>Your Name: <input type="text" name="name" v-model="formData.name" required /></label>
             </p>
@@ -31,7 +31,7 @@
             <div v-if="submissionResult === 'error'" class="error-message">
                 {{ submissionMessage }}
             </div>
-        </form>
+        </form> -->
     </div>
 </template>
 
