@@ -2,7 +2,7 @@
     <section
         v-editable="blok"
         :class="[
-            dynamicClass
+            // dynamicClass
         ]"
         class="locate-with-form"
     >
@@ -52,10 +52,10 @@
 			this.fetchOpeningHours();
 		},
         computed: {
-            dynamicClass() {
-                const color = this.blok.bgColour.value;
-                return this.colorClassMapping[color] || '';
-            },
+            // dynamicClass() {
+            //     const color = this.blok.bgColour.value;
+            //     return this.colorClassMapping[color] || '';
+            // },
 		},
 		methods: {
 			async fetchOpeningHours() {
