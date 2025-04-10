@@ -30,34 +30,41 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row bottom-row">
 				<h3 v-if="blok?.formHeading?.length">{{ blok.formHeading }}</h3>
 				<form @submit.prevent="handleSubmit">
 					<div class="form-row">
 						<div class="form-column left">
-							<p>
-								<label>Your Name: <input type="text" name="name" v-model="formData.name" required /></label>
-							</p>
-							<p>
-								<label>Your Email: <input type="email" name="email" v-model="formData.email" required /></label>
-							</p>
-							<p>
-								<label>Contact Number: <input type="number" name="telephone" v-model="formData.telephone" required /></label>
-							</p>
-							<p>
-								<label>Location: <input type="text" name="location" v-model="formData.location" required /></label>
-							</p>
+							<label for="name" class="caption">
+								Your name
+								<input type="text" name="name" v-model="formData.name" required />
+							</label>
+
+							<label for="email" class="caption">
+								Email address
+								<input type="email" name="email" v-model="formData.email" required />
+							</label>
+
+							<label for="telepone" class="caption">
+								Contact number
+								<input type="tel" name="telephone" v-model="formData.telephone" required />
+							</label>
+							
+							<label for="location" class="caption">
+								Where are you located?
+								<input type="text" name="location" v-model="formData.location" required />
+							</label>
 						</div>
 						<div class="form-column right">
-							<p class="message-field">
-								<label>Message: <textarea name="message" v-model="formData.message" required></textarea></label>
-							</p>
-							<p class="submit-button">
-								<button type="submit" :disabled="isSubmitting">
-									<span v-if="isSubmitting">Sending...</span>
-									<span v-else>Send</span>
-								</button>
-							</p>
+							<label for="message" class="caption">
+								Message
+								<textarea name="message" v-model="formData.message" required ></textarea>
+							</label>
+
+							<button type="submit" class="button primary" :disabled="isSubmitting">
+								<span v-if="isSubmitting">Sending...</span>
+								<span v-else>Send</span>
+							</button>
 
 							<div v-if="submissionResult === 'success'" class="success-message">
 								{{ submissionMessage }}
@@ -250,56 +257,66 @@
                 }
             }
 
+			.bottom-row {
+				padding: 1rem;
+			}
+
             .row {
-				h3 {
-					padding: 0 1rem;
-				}
 				.form-row {
 					display: flex;
 					flex-direction: row;
 					gap: 2rem;
-					padding: 1rem;
 					width: 100%;
-					margin-top: 2rem;
 
 					.form-column {
 						flex: 1;
 						display: flex;
 						flex-direction: column;
+						gap: .5rem;
 
-						p {
-							margin-bottom: 1rem;
+						.caption {
+							font-size: .6rem;
+							text-transform: uppercase;
+						}
 
-							label {
-								display: block;
-								margin-bottom: 0.5rem;
-								font-weight: bold;
-							}
+						input[type="text"],
+						input[type="email"],
+						input[type="number"],
+						input[type="tel"],
+						textarea,
+						select {
+							border: 1px solid #ccc;
+							border-bottom: 3px solid #ccc;
+							box-sizing: border-box;
+							padding: 1rem .75rem;
+							width: 100%;
 
-							input[type="text"],
-							input[type="email"],
-							input[type="number"],
-							textarea,
-							select {
-								width: 100%;
-								padding: 0.75rem;
-								border: 1px solid #ccc;
-								border-radius: 4px;
-								box-sizing: border-box;
-							}
-
-							textarea {
-								min-height: 100px;
+							&:focus {
+								outline: none;
 							}
 						}
 
+						textarea {
+							min-height: 150px;
+							max-width: 100% !important;
+							resize: none;
+						}
+						
 						&.right {
 							display: flex;
 							flex-direction: column;
-							justify-content: space-between;
+						}
 
-							.submit-button {
-								margin-top: auto;
+						.primary {
+							border: 2px solid $color-3;
+							background-color: $color-1;
+							color: $secondary-color;
+							cursor: pointer;
+							padding: .75rem;
+
+							&:hover {
+								border-color: $color-1;
+								transition: .5s;
 							}
 						}
 					}
@@ -325,12 +342,18 @@
     }
 
     .success-message {
-        color: green;
-        margin-top: 1rem;
+		border: 1px solid #35a635;
+		border-bottom-width: 3px;
+        color: #35a635;
+		padding: .5rem;
+		text-align: center;
     }
 
     .error-message {
-        color: red;
-        margin-top: 1rem;
+		border: 1px solid #c33131;
+		border-bottom-width: 3px;
+        color: #c33131;
+		padding: .5rem;
+		text-align: center;
     }
 </style>

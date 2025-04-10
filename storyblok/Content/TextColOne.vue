@@ -146,6 +146,8 @@
         .content-container {
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
+            max-width: $sw;
             padding: 1rem 2rem 0;
             width: 100%;
 

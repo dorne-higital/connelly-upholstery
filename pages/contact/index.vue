@@ -60,43 +60,43 @@
         ]
     });
 
-    const formData = reactive({
-        name: '',
-        email: '',
-        role: [],
-        message: '',
-    });
+    // const formData = reactive({
+    //     name: '',
+    //     email: '',
+    //     role: [],
+    //     message: '',
+    // });
 
-    const isSubmitting = ref(false);
-    const submissionResult = ref(null); // Can be 'success' or 'error'
-    const submissionMessage = ref('');
+    // const isSubmitting = ref(false);
+    // const submissionResult = ref(null); // Can be 'success' or 'error'
+    // const submissionMessage = ref('');
 
-    const handleSubmit = async () => {
-        isSubmitting.value = true;
-        submissionResult.value = null;
-        submissionMessage.value = '';
+    // const handleSubmit = async () => {
+    //     isSubmitting.value = true;
+    //     submissionResult.value = null;
+    //     submissionMessage.value = '';
 
-        try {
-            const { success, message } = await $fetch('/api/send-email', {
-                method: 'POST',
-                body: formData,
-            });
+    //     try {
+    //         const { success, message } = await $fetch('/api/send-email', {
+    //             method: 'POST',
+    //             body: formData,
+    //         });
 
-            submissionResult.value = 'success';
-            submissionMessage.value = message;
-            // Optionally reset the form
-            formData.name = '';
-            formData.email = '';
-            formData.role = [];
-            formData.message = '';
-        } catch (error) {
-            submissionResult.value = 'error';
-            submissionMessage.value = error.message || 'An error occurred while sending the email.';
-            console.error('Form submission error:', error);
-        } finally {
-            isSubmitting.value = false;
-        }
-    };
+    //         submissionResult.value = 'success';
+    //         submissionMessage.value = message;
+    //         // Optionally reset the form
+    //         formData.name = '';
+    //         formData.email = '';
+    //         formData.role = [];
+    //         formData.message = '';
+    //     } catch (error) {
+    //         submissionResult.value = 'error';
+    //         submissionMessage.value = error.message || 'An error occurred while sending the email.';
+    //         console.error('Form submission error:', error);
+    //     } finally {
+    //         isSubmitting.value = false;
+    //     }
+    // };
 </script>
 
 <style scoped>

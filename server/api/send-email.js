@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  const { name, email, role, message } = body;
+  const { name, email, telephone, location, message } = body;
 
   // Basic input validation (you might want to add more robust validation)
   if (!name || !email || !message) {
@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
 	`,
     });
 
-    return { success: true, message: 'Email sent successfully!' };
+    return { success: true, message: 'Thank you for your enquiry, we will be in touch as soon as possible!' };
   } catch (error) {
     console.error('Error sending email:', error);
     throw createError({
