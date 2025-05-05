@@ -6,42 +6,43 @@
             dynamicClass
         ]"
     >
-        <div 
-            class="content-container"
-            :style="{ 
-                'text-align': blok.align 
-            }"
-        >
-            <p 
-                v-if="blok?.label?.length"
-                class="description-header"
+        <div class="content-container">
+            <div 
+                class="content"
+                :style="{ 
+                    'text-align': blok.align 
+                }"
             >
-                {{ blok.label }}
-            </p>
+                <p 
+                    v-if="blok?.label?.length"
+                    class="description-header"
+                >
+                    {{ blok.label }}
+                </p>
 
-            <h2
-                v-if="blok?.heading?.length"
-                class="heading"
-            >
-                {{ blok.heading }}
-            </h2>
+                <h2
+                    v-if="blok?.heading?.length"
+                    class="heading"
+                >
+                    {{ blok.heading }}
+                </h2>
 
-            <h4
-                v-if="blok?.subheading?.length"
-                class="subheading"
+                <h4
+                    v-if="blok?.subheading?.length"
+                    class="subheading"
+                >
+                    {{ blok.subheading }}
+                </h4>
+            </div>
+
+            <nuxt-link 
+                v-if="blok?.linkText?.length"
+                :to="blok.linkUrl.cached_url"
+                class="button"
             >
-                {{ blok.subheading }}
-            </h4>
+                {{ blok.linkText }}
+            </nuxt-link>
         </div>
-
-
-        <nuxt-link 
-            v-if="blok?.linkText?.length"
-            :to="blok.linkUrl.cached_url"
-            class="button"
-        >
-            {{ blok.linkText }}
-        </nuxt-link>
     </section>
 </template>
 
@@ -140,16 +141,14 @@
         }
 
         .content-container {
+            align-items: center;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
             margin: 0 auto;
             max-width: $sw;
             padding: 1rem 2rem 0;
             width: 100%;
-
-            @media (max-width: 600px) {
-                padding: 1rem 0;
-            }
 
             .button {
                 background-color: $bg-secondary;
