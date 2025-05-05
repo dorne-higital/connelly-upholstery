@@ -33,6 +33,15 @@
                 {{ blok.subheading }}
             </h4>
         </div>
+
+
+        <nuxt-link 
+            v-if="blok?.linkText?.length"
+            :to="blok.linkUrl.cached_url"
+            class="button"
+        >
+            {{ blok.linkText }}
+        </nuxt-link>
     </section>
 </template>
 
