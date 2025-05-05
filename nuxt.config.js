@@ -35,12 +35,19 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
 
   modules: [
-    '@storyblok/nuxt',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots'
+    [
+      '@storyblok/nuxt',
+      {
+        accessToken: 'XFpR0AEuvI2nLhpnj3F3iwtt',
+        apiOptions: {
+          region: '' // Set 'US" if your space is created in US region (EU default)
+        }
+      },
+      '@nuxtjs/sitemap',
+      '@nuxtjs/robots'
+    ],
   ],
-  
-  // Correct placement of head
+
   app: {
     head: {
       script: [
