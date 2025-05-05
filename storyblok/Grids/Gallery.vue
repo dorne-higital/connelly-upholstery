@@ -163,6 +163,7 @@
         .block-container {
             display: flex;
             flex-wrap: wrap;
+            gap: .5rem;
             justify-content: center;
             padding: 1rem;
             max-width: $sw;
@@ -170,6 +171,12 @@
             @media (max-width: 600px) {
                 padding: 0;
                 width: 100%;
+            }
+
+            img {
+                aspect-ratio: 1 / 1;
+                max-width: 20rem;
+                object-fit: cover;
             }
         }
 
