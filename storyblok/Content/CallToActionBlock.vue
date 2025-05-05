@@ -32,15 +32,11 @@
             >
                 {{ blok.subheading }}
             </h4>
-
-            <div v-html="resolvedRichText"></div>
         </div>
     </section>
 </template>
 
 <script>
-    import { RichTextResolver } from '@storyblok/vue';
-
     export default {
         name: 'callToActionBlock',
         props: {
@@ -65,15 +61,6 @@
             };
         },
         computed: {
-            // Resolves the rich text into HTML
-            resolvedRichText() {
-                if (this.blok?.description) {
-                    const resolver = new RichTextResolver();
-                    return resolver.render(this.blok.description); // Resolve the rich text field
-                }
-                return '';
-            },
-
             dynamicClass() {
                 const color = this.blok.bgColour.value;
                 return this.colorClassMapping[color] || '';
@@ -89,7 +76,7 @@
         display: flex;
         flex-direction: row;
         gap: 2rem;
-        padding: 5rem 2rem;
+        padding: 3rem 1rem;
         width: 100%;
 
         @media (max-width: 600px) {
