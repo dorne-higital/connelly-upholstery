@@ -35,27 +35,22 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
 
   modules: [
-    [
-      '@storyblok/nuxt',
-      {
-        accessToken: 'XFpR0AEuvI2nLhpnj3F3iwtt',
-        apiOptions: {
-          region: '' // Set 'US" if your space is created in US region (EU default)
-        }
-      },
-      '@nuxtjs/sitemap',
-      '@nuxtjs/robots'
-    ],
+    '@storyblok/nuxt',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
   
-  head: {
-    script: [
-      {
-        src: 'https://analytics.ahrefs.com/analytics.js',
-        'data-key': 'UP3gNsbOlFZal7V68tYimA',
-        async: true,
-      },
-    ],
+  // Correct placement of head
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://analytics.ahrefs.com/analytics.js',
+          'data-key': 'UP3gNsbOlFZal7V68tYimA',
+          async: true,
+        },
+      ],
+    },
   },
 
   robots: {
