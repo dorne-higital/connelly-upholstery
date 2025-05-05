@@ -30,10 +30,12 @@
         </div>
 
         <div class="block-container">
-            <StoryblokComponent
-                v-for="blok in blok.image"
-                :key="blok._uid"
-                :blok="blok"
+            <img
+                v-for="(image, index) in blok.image"
+                :key="image.id || index"
+                :src="image.filename"
+                :alt="image.alt || `Gallery image ${index + 1}`"
+                class="gallery-image"
             />
         </div>
 
