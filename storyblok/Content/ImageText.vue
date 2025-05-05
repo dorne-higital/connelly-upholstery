@@ -149,6 +149,10 @@
             .content {
                 flex-direction: row-reverse;
 
+                @media (max-width: 767px) {
+                    flex-direction: column;
+                }
+
                 .content-container {
                     align-items: flex-end;
                     text-align: right;
@@ -161,6 +165,10 @@
             flex-direction: row;
             margin: 0 auto;
             max-width: $sw;
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
 
                 .content-container {
                     align-items: flex-start;
