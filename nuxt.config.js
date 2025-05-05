@@ -43,8 +43,23 @@ export default defineNuxtConfig({
           region: '' // Set 'US" if your space is created in US region (EU default)
         }
       },
+      '@nuxtjs/sitemap',
+      '@nuxtjs/robots'
     ],
   ],
+
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+    Sitemap: 'https://connelly-upholstery.netlify.app/sitemap.xml'
+  },
+
+  sitemap: {
+    siteUrl: 'https://connelly-upholstery.netlify.app',
+    async routes() {
+      return globalThis?.nitroApp?.public?.dynamicRoutes || []
+    }
+  },
 
   components: {
     global: true,

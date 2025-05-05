@@ -18,6 +18,8 @@
     "sass-embedded": "^1.83.1"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^5.2.10",
+    "@nuxtjs/sitemap": "^7.2.10",
     "formidable": "^3.5.2",
     "masonry-layout": "^4.2.2",
     "nodemailer": "^6.10.0",
