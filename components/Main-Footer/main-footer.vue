@@ -16,9 +16,11 @@
                 </span>
             </h5>
             <div :class="{ active: isSectionOpen('companyInfo') }">
-                <p>Address 1</p>
-                <p>Address 2</p>
-                <p>Postcode</p>
+                <p>Connelly Upholstery</p>
+                <p>Unit 5, Bewsey Business Centre</p>
+                <p>Bewsey Rd</p>
+                <p>Warrington </p>
+                <p>WA5 0JU</p>
             </div>
         </div>
 
@@ -99,12 +101,16 @@
 <script>
 import iconPlus from '~/components/Icons/icon-plus.vue';
 import iconMinus from '~/components/Icons/icon-minus.vue';
+    import iconInstagram from '~/components/Icons/icon-instagram.vue';
+    import iconFacebook from '~/components/Icons/icon-facebook.vue';
 
 export default {
     name: 'mainFooter',
     components: {
         iconPlus,
         iconMinus,
+        iconInstagram,
+        iconFacebook,
     },
     data() {
         return {

@@ -14,19 +14,19 @@
 
   // Set page meta tags
   useHead({
-      title: 'Connelly Upholstery | The home page',
+      title: 'Connelly Upholstery | Your favourite local upholstery expert',
       meta: [
           {
               name: 'description',
-              content: 'Description'
+              content: 'Your favourite local upholstery expert'
           },
           {
               property: 'og:title',
-              content: 'Connelly Upholstery | Home pahe'
+              content: 'Connelly Upholstery | Your favourite local upholstery expert'
           },
           {
               property: 'og:description',
-              content: 'Description'
+              content: 'Your favourite local upholstery expert'
           },
       ]
   })

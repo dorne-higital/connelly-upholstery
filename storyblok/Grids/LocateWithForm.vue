@@ -17,6 +17,13 @@
                             <p>{{ hours }}</p>
                         </li>
                     </ul>
+
+                    <p 
+                        v-if="blok?.hoursDisclaimer?.length" 
+                        class="caption"
+                    >
+                        {{ blok.hoursDisclaimer }}
+                    </p>
                 </div>
 
                 <div class="item map-container">
@@ -236,6 +243,10 @@
                     flex-direction: column;
                     padding: 1rem;
 
+                    .caption {
+                        font-size: .75rem;
+                    }
+
                     .hours {
                         li {
                             display: flex;
@@ -267,6 +278,10 @@
 					flex-direction: row;
 					gap: 2rem;
 					width: 100%;
+
+                    @media (max-width: 900px) {
+                        gap: 0;
+                    }
 
 					.form-column {
 						flex: 1;
@@ -328,7 +343,7 @@
 							width: 100%;
 
 							&.right {
-								margin-top: 1.5rem;
+								margin-top: 0.5rem;
 							}
 						}
 					}
