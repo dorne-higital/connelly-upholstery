@@ -48,18 +48,6 @@ export default defineNuxtConfig({
     ],
   ],
 
-  app: {
-    head: {
-      script: [
-        {
-          src: 'https://analytics.ahrefs.com/analytics.js',
-          'data-key': 'UP3gNsbOlFZal7V68tYimA',
-          async: true,
-        },
-      ],
-    },
-  },
-
   robots: {
     UserAgent: '*',
     Disallow: '',
