@@ -189,6 +189,20 @@
             padding: 0 1rem;
             width: 100%;
 
+            @media (max-width: 767px) {
+                flex-direction: column;
+                gap: 1rem;
+                
+                .content {
+                    .description-header,
+                    .header,
+                    .subheading {
+                        margin: 0;
+                        text-align: center;
+                    }
+                }
+            }
+
             .button {
                 background-color: $bg-secondary;
                 border: 2px solid $bg-secondary;
