@@ -12,20 +12,28 @@
     )
 
     useHead({
-        title: 'Connelly Upholstery | Process',
+        title: 'Connelly Upholstery | The process to a perfect upholstered piece of furniture',
         meta: [
             {
                 name: 'description',
-                content: 'Process page'
+                content: 'Learn about Connelly Upholstery’s detailed process for restoring and upholstering furniture. From consultation to final delivery, we ensure top-quality craftsmanship at every step.'
             },
             {
                 property: 'og:title',
-                content: 'Connelly Upholstery | Process'
+                content: 'Connelly Upholstery | Our Upholstery & Restoration Process'
             },
             {
                 property: 'og:description',
-                content: 'Process page'
+                content: 'Explore our step-by-step upholstery and furniture restoration process, designed to bring new life to your furnishings with expert care and precision.'
             },
+            {
+                name: 'keywords',
+                content: 'upholstery process, furniture restoration process, how upholstery works, Connelly Upholstery, restoration steps, custom upholstery, craftsmanship'
+            },
+            {
+                property: 'og:type',
+                content: 'website'
+            }
         ]
     })
 </script>

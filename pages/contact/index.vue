@@ -1,37 +1,6 @@
 <template>
     <div>
         <StoryblokComponent v-if="story" :blok="story.content" />
-
-        <!-- <form @submit.prevent="handleSubmit">
-            <p>
-                <label>Your Name: <input type="text" name="name" v-model="formData.name" required /></label>
-            </p>
-            <p>
-                <label>Your Email: <input type="email" name="email" v-model="formData.email" required /></label>
-            </p>
-            <p>
-                <label>Your Role: <select name="role[]" multiple v-model="formData.role">
-                    <option value="enquiry">Enquiry</option>
-                    <option value="help">Help</option>
-                </select></label>
-            </p>
-            <p>
-                <label>Message: <textarea name="message" v-model="formData.message" required></textarea></label>
-            </p>
-            <p>
-                <button type="submit" :disabled="isSubmitting">
-                    <span v-if="isSubmitting">Sending...</span>
-                    <span v-else>Send</span>
-                </button>
-            </p>
-
-            <div v-if="submissionResult === 'success'" class="success-message">
-                {{ submissionMessage }}
-            </div>
-            <div v-if="submissionResult === 'error'" class="error-message">
-                {{ submissionMessage }}
-            </div>
-        </form> -->
     </div>
 </template>
 
@@ -43,60 +12,30 @@
     );
 
     useHead({
-        title: 'Connelly Upholstery | Contact us',
+        title: 'Connelly Upholstery | Get in touch',
         meta: [
             {
                 name: 'description',
-                content: 'Contact page'
+                content: 'Get in touch with Connelly Upholstery for expert furniture restoration, custom upholstery, and fabric repairs. Request a free quote or ask us any questions—serving both residential and commercial clients.'
             },
             {
                 property: 'og:title',
-                content: 'Connelly Upholstery | Contact us'
+                content: 'Contact Connelly Upholstery | Get in touch'
             },
             {
                 property: 'og:description',
-                content: 'Contact page'
+                content: 'Need expert upholstery services? Contact Connelly Upholstery today for custom furniture restoration, repair, and upholstery services for homes and businesses.'
             },
+            {
+                name: 'keywords',
+                content: 'contact upholstery business, furniture repair quote, custom upholstery services, Connelly Upholstery contact, upholstery consultation, commercial upholstery services, fabric repair'
+            },
+            {
+                property: 'og:type',
+                content: 'website'
+            }
         ]
     });
-
-    // const formData = reactive({
-    //     name: '',
-    //     email: '',
-    //     role: [],
-    //     message: '',
-    // });
-
-    // const isSubmitting = ref(false);
-    // const submissionResult = ref(null); // Can be 'success' or 'error'
-    // const submissionMessage = ref('');
-
-    // const handleSubmit = async () => {
-    //     isSubmitting.value = true;
-    //     submissionResult.value = null;
-    //     submissionMessage.value = '';
-
-    //     try {
-    //         const { success, message } = await $fetch('/api/send-email', {
-    //             method: 'POST',
-    //             body: formData,
-    //         });
-
-    //         submissionResult.value = 'success';
-    //         submissionMessage.value = message;
-    //         // Optionally reset the form
-    //         formData.name = '';
-    //         formData.email = '';
-    //         formData.role = [];
-    //         formData.message = '';
-    //     } catch (error) {
-    //         submissionResult.value = 'error';
-    //         submissionMessage.value = error.message || 'An error occurred while sending the email.';
-    //         console.error('Form submission error:', error);
-    //     } finally {
-    //         isSubmitting.value = false;
-    //     }
-    // };
 </script>
 
 <style scoped>
