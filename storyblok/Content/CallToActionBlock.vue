@@ -102,6 +102,19 @@
                 color: $secondary-color;
                 cursor: pointer;
             }
+
+            .content-container {
+                .button {
+                    background-color: transparent;
+                    border: 2px solid $bg-primary;
+                    color: $secondary-color;
+
+                    &:hover {
+                        background-color: $bg-primary;
+                        color: $primary-color;
+                    }
+                }
+            }
         }
 
         &.color-2 {
@@ -112,6 +125,19 @@
                 color: $secondary-color;
                 cursor: pointer;
             }
+
+            .content-container {
+                .button {
+                    background-color: transparent;
+                    border: 2px solid $bg-primary;
+                    color: $secondary-color;
+
+                    &:hover {
+                        background-color: $bg-primary;
+                        color: $primary-color;
+                    }
+                }
+            }
         }
 
         &.color-3 {
@@ -121,6 +147,19 @@
             a {
                 color: $secondary-color;
                 cursor: pointer;
+            }
+
+            .content-container {
+                .button {
+                    background-color: transparent;
+                    border: 2px solid $bg-primary;
+                    color: $secondary-color;
+
+                    &:hover {
+                        background-color: $bg-primary;
+                        color: $primary-color;
+                    }
+                }
             }
         }
 
@@ -147,7 +186,7 @@
             justify-content: space-between;
             margin: 0 auto;
             max-width: $sw;
-            padding: 1rem 2rem 0;
+            padding: 0 1rem;
             width: 100%;
 
             .button {
@@ -155,7 +194,6 @@
                 border: 2px solid $bg-secondary;
                 color: $secondary-color;
                 cursor: pointer;
-                margin-top: 1rem;
                 padding: .5rem 1.5rem;
                 transition: .3s;
                 width: fit-content;
