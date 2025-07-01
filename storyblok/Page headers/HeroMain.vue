@@ -55,12 +55,12 @@
 @import "~/assets/css/main.scss";
 
 .hero-main {
-    height: 100dvh;
+    height: 90dvh;
     position: relative;
     width: 100%;
 
     @media only screen and (max-width: 600px) {
-        height: 90vh;
+        height: 80vh;
     }
 
     .hero-banner {
