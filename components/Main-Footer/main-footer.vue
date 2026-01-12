@@ -62,31 +62,31 @@
                 <ul class="hours">
                     <li>
                         <p>Monday</p>
-                        <p>09:30 - 14:30</p>
+                        <p>09:30 - 16:00</p>
                     </li>
                     <li>
                         <p>Tuesday</p>
-                        <p>09:30 - 14:30</p>
+                        <p>09:30 - 16:00</p>
                     </li>
                     <li>
                         <p>Wednesday</p>
-                        <p>11:30 - 16:30</p>
+                        <p>09:30 - 16:00</p>
                     </li>
                     <li>
                         <p>Thursday</p>
-                        <p>09:30 - 14:30</p>
+                        <p>09:30 - 16:00</p>
                     </li>
                     <li>
                         <p>Friday</p>
-                        <p>11:30 - 15:00</p>
+                        <p>09:30 - 15:00</p>
                     </li>
                     <li>
                         <p>Saturday</p>
-                        <p>By appointment</p>
+                        <p>Closed</p>
                     </li>
                     <li>
                         <p>Sunday</p>
-                        <p>By appointment</p>
+                        <p>Closed</p>
                     </li>
                 </ul>
             </div>
