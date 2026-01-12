@@ -52,7 +52,7 @@
 
         <div class="contact_info">
             <h5 @click="toggleSection('contactInfo')">
-                Office opening hours
+                Opening hours
                 <span v-if="isMobile">
                     <icon-plus v-if="!isSectionOpen('contactInfo')" />
                     <icon-minus v-else />
