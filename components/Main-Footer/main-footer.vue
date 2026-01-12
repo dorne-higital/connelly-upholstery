@@ -59,34 +59,10 @@
                 </span>
             </h5>
             <div :class="{ active: isSectionOpen('contactInfo') }">
-                <ul class="hours">
-                    <li>
-                        <p>Monday</p>
-                        <p>09:30 - 16:00</p>
-                    </li>
-                    <li>
-                        <p>Tuesday</p>
-                        <p>09:30 - 16:00</p>
-                    </li>
-                    <li>
-                        <p>Wednesday</p>
-                        <p>09:30 - 16:00</p>
-                    </li>
-                    <li>
-                        <p>Thursday</p>
-                        <p>09:30 - 16:00</p>
-                    </li>
-                    <li>
-                        <p>Friday</p>
-                        <p>09:30 - 15:00</p>
-                    </li>
-                    <li>
-                        <p>Saturday</p>
-                        <p>Closed</p>
-                    </li>
-                    <li>
-                        <p>Sunday</p>
-                        <p>Closed</p>
+                <ul class="hours" v-if="openingHours">
+                    <li v-for="(hours, day) in openingHours" :key="day">
+                        <p>{{ day }}</p>
+                        <p>{{ hours }}</p>
                     </li>
                 </ul>
             </div>
@@ -99,10 +75,11 @@
 </template>
 
 <script>
+    import { reactive, ref } from 'vue';
 import iconPlus from '~/components/Icons/icon-plus.vue';
 import iconMinus from '~/components/Icons/icon-minus.vue';
-    import iconInstagram from '~/components/Icons/icon-instagram.vue';
-    import iconFacebook from '~/components/Icons/icon-facebook.vue';
+import iconInstagram from '~/components/Icons/icon-instagram.vue';
+import iconFacebook from '~/components/Icons/icon-facebook.vue';
 
 export default {
     name: 'mainFooter',
@@ -115,10 +92,12 @@ export default {
     data() {
         return {
             openSection: null,
-            isMobile: false
+            isMobile: false,
+            openingHours: null,
         };
     },
     mounted() {
+        this.fetchOpeningHours();
         this.checkScreenSize();
         window.addEventListener('resize', this.checkScreenSize);
     },
@@ -139,7 +118,20 @@ export default {
         },
         checkScreenSize() {
             this.isMobile = window.innerWidth <= 600;
-        }
+        },
+        async fetchOpeningHours() {
+            try {
+                const response = await fetch(
+                    `https://api.storyblok.com/v2/cdn/datasource_entries?datasource=opening-hours&token=XFpR0AEuvI2nLhpnj3F3iwtt&version=draft`
+                );
+                const data = await response.json();
+                this.openingHours = Object.fromEntries(
+                data.datasource_entries.map((entry) => [entry.name, entry.value])
+                );
+            } catch (error) {
+                console.error("Error fetching opening hours:", error);
+            }
+        },
     }
 }
 </script>
