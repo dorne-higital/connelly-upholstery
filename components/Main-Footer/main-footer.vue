@@ -75,7 +75,6 @@
 </template>
 
 <script>
-    import { reactive, ref } from 'vue';
 import iconPlus from '~/components/Icons/icon-plus.vue';
 import iconMinus from '~/components/Icons/icon-minus.vue';
 import iconInstagram from '~/components/Icons/icon-instagram.vue';
