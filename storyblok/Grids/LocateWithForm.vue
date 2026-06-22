@@ -68,6 +68,47 @@
 								<textarea name="message" v-model="formData.message" required ></textarea>
 							</label>
 
+							<div class="upload-section">
+								<span class="caption">Attach photos (optional)</span>
+								<div
+									class="upload-zone"
+									:class="{ 'is-dragging': isDragging }"
+									@dragover.prevent="isDragging = true"
+									@dragleave.prevent="isDragging = false"
+									@drop.prevent="handleDrop"
+									@click="$refs.fileInput.click()"
+								>
+									<input
+										type="file"
+										ref="fileInput"
+										@change="handleFileChange"
+										multiple
+										accept="image/*,.pdf"
+									/>
+									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+										<polyline points="16 16 12 12 8 16"></polyline>
+										<line x1="12" y1="12" x2="12" y2="21"></line>
+										<path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+									</svg>
+									<p class="upload-prompt">Click or drag files here</p>
+									<p class="upload-hint">JPG, PNG, PDF</p>
+								</div>
+								<div v-if="selectedFiles.length" class="file-summary">
+									<button type="button" class="summary-toggle" @click="isFilesExpanded = !isFilesExpanded">
+										<span>{{ selectedFiles.length }} {{ selectedFiles.length === 1 ? 'photo' : 'photos' }} attached</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" :style="{ transform: isFilesExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform .2s' }">
+											<polyline points="6 9 12 15 18 9"></polyline>
+										</svg>
+									</button>
+									<ul v-if="isFilesExpanded" class="file-chips">
+										<li v-for="(file, index) in selectedFiles" :key="file.name">
+											<span class="file-name">{{ file.name }}</span>
+											<button type="button" class="remove-file" @click.stop="removeFile(index)" aria-label="Remove file">×</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+
 							<button type="submit" class="button primary" :disabled="isSubmitting">
 								<span v-if="isSubmitting">Sending...</span>
 								<span v-else>Send</span>
@@ -118,6 +159,9 @@
                     location: '',
                     message: '',
                 }),
+                selectedFiles: [],
+                isDragging: false,
+                isFilesExpanded: false,
                 isSubmitting: ref(false),
                 submissionResult: ref(null),
                 submissionMessage: ref(''),
@@ -146,15 +190,49 @@
                     console.error("Error fetching opening hours:", error);
                 }
             },
+            handleFileChange(event) {
+                this.mergeFiles(Array.from(event.target.files));
+            },
+            handleDrop(event) {
+                this.isDragging = false;
+                this.mergeFiles(Array.from(event.dataTransfer.files));
+            },
+            mergeFiles(incoming) {
+                const existing = this.selectedFiles.map(f => f.name);
+                const deduped = incoming.filter(f => !existing.includes(f.name));
+                this.selectedFiles = [...this.selectedFiles, ...deduped];
+            },
+            removeFile(index) {
+                this.selectedFiles.splice(index, 1);
+                if (!this.selectedFiles.length) this.$refs.fileInput.value = '';
+            },
+            filesToBase64(files) {
+                return Promise.all(
+                    files.map(file => new Promise((resolve, reject) => {
+                        const reader = new FileReader();
+                        reader.onload = () => resolve({
+                            filename: file.name,
+                            content: reader.result.split(',')[1],
+                            contentType: file.type,
+                        });
+                        reader.onerror = reject;
+                        reader.readAsDataURL(file);
+                    }))
+                );
+            },
             async handleSubmit() {
                 this.isSubmitting = true;
                 this.submissionResult = null;
                 this.submissionMessage = '';
 
                 try {
+                    const attachments = this.selectedFiles.length
+                        ? await this.filesToBase64(this.selectedFiles)
+                        : [];
+
                     const { success, message } = await $fetch('/api/send-email', {
                         method: 'POST',
-                        body: this.formData,
+                        body: { ...this.formData, attachments },
                     });
 
                     this.submissionResult = 'success';
@@ -164,6 +242,9 @@
                     this.formData.telephone = '';
                     this.formData.location = '';
                     this.formData.message = '';
+                    this.selectedFiles = [];
+                    this.isFilesExpanded = false;
+                    this.$refs.fileInput.value = '';
                 } catch (error) {
                     this.submissionResult = 'error';
                     this.submissionMessage = error.message || 'An error occurred while sending the email.';
@@ -320,6 +401,130 @@
 						&.right {
 							display: flex;
 							flex-direction: column;
+						}
+
+						.upload-section {
+							display: flex;
+							flex-direction: column;
+							gap: .5rem;
+
+							> .caption {
+								font-size: .6rem;
+								text-transform: uppercase;
+							}
+						}
+
+						.upload-zone {
+							align-items: center;
+							border: 1px dashed #ccc;
+							border-bottom: 3px dashed #ccc;
+							color: #aaa;
+							cursor: pointer;
+							display: flex;
+							flex-direction: row;
+							gap: .6rem;
+							padding: .75rem;
+							transition: border-color .2s, color .2s, background .2s;
+
+							input[type="file"] {
+								display: none;
+							}
+
+							svg {
+								flex-shrink: 0;
+								opacity: .5;
+								transition: opacity .2s;
+							}
+
+							.upload-prompt {
+								font-size: .7rem;
+								margin: 0;
+							}
+
+							.upload-hint {
+								font-size: .6rem;
+								letter-spacing: .05em;
+								margin: 0 0 0 auto;
+								text-transform: uppercase;
+							}
+
+							&:hover,
+							&.is-dragging {
+								background: $color-3;
+								border-color: $color-1;
+								color: $color-1;
+
+								svg {
+									opacity: 1;
+								}
+							}
+						}
+
+						.file-summary {
+							display: flex;
+							flex-direction: column;
+							gap: .2rem;
+						}
+
+						.summary-toggle {
+							align-items: center;
+							background: $color-3;
+							border: none;
+							border-left: 2px solid $color-1;
+							color: $tertiary-color;
+							cursor: pointer;
+							display: flex;
+							font-size: .6rem;
+							gap: .4rem;
+							justify-content: space-between;
+							padding: .3rem .5rem;
+							text-transform: uppercase;
+							letter-spacing: .05em;
+							width: 100%;
+
+							&:hover {
+								color: $color-1;
+							}
+						}
+
+						.file-chips {
+							display: flex;
+							flex-direction: column;
+							gap: .2rem;
+							list-style: none;
+							margin: 0;
+							padding: 0;
+
+							li {
+								align-items: center;
+								background: $color-3;
+								border-left: 2px solid $color-1;
+								display: flex;
+								font-size: .6rem;
+								justify-content: space-between;
+								padding: .25rem .4rem;
+							}
+
+							.file-name {
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+
+							.remove-file {
+								background: none;
+								border: none;
+								color: #aaa;
+								cursor: pointer;
+								flex-shrink: 0;
+								font-size: .85rem;
+								line-height: 1;
+								padding: 0 0 0 .5rem;
+
+								&:hover {
+									color: #c33131;
+								}
+							}
 						}
 
 						.primary {
