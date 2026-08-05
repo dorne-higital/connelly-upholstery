@@ -30,7 +30,7 @@
 			<div class="row bottom-row">
 				<h3 v-if="blok?.formHeading?.length">{{ blok.formHeading }}</h3>
 
-				<h5 v-if="blok?.formSubHeading?.length">{{ blok.formSubHeading }}</h5>
+				<h6 v-if="blok?.formSubHeading?.length">{{ blok.formSubHeading }}</h6>
 				<form @submit.prevent="handleSubmit">
 					<div class="form-row">
 						<div class="form-column left">
